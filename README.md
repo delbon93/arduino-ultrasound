@@ -24,7 +24,7 @@ The project makes use of the following components:
 
 ## Board Schematic
 
-[Board Schematic](/docs/img/schematic.png)
+![Board Schematic](/docs/img/schematic.png)
 
 ## Notable Challenges
 
