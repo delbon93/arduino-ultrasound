@@ -26,7 +26,7 @@ class FourSegDisplay
     lastUpdateMicros = micros();
 
     if (microsToNextSwap < 0) {
-      microsToNextSwap += DIGIT_SWAP_INTERVAL_MICROSECONDS;
+      microsToNextSwap = DIGIT_SWAP_INTERVAL_MICROSECONDS;
       SwapDigit();
     }
   }
@@ -67,7 +67,10 @@ class FourSegDisplay
   void SwapDigit()
   {
     currentDigit = (currentDigit + 1) % 4;
-    m_DataShiftRegister.PushValue(m_DigitValues[currentDigit]);
+    // admit the currently stored value to the output (the now valid digit) and
+    // store the next value for the upcoming swap
+    m_DataShiftRegister.Store();
+    m_DataShiftRegister.PushValueNoStore(m_DigitValues[(currentDigit + 1) % 4]);
     for (auto i = 0; i < 4; i++) {
       SetDigitEnable(i, i == currentDigit);
     }

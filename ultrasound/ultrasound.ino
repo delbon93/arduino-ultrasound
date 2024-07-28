@@ -16,8 +16,10 @@ constexpr auto PIN_FSD_DIGIT2 = 9;
 constexpr auto PIN_FSD_DIGIT3 = 10;
 constexpr auto PIN_FSD_DIGIT4 = 11;
 
-constexpr auto TRIGGER_DELAY = 80U;
+constexpr auto TRIGGER_DELAY = 75;
 constexpr auto RANGE_LIMIT = 400;
+
+constexpr auto RINGBUFFER_SIZE = 20;
 
 auto lastFrameMillis = millis();
 
@@ -25,7 +27,7 @@ Ultrasound distanceSensor(PIN_USS_TRG, PIN_USS_ECHO, TRIGGER_DELAY, RANGE_LIMIT)
 ShiftRegister8 ledBsr(PIN_BSR_OUTPUTEN, PIN_BSR_SER, PIN_BSR_SRCLK, PIN_BSR_RCLK, PIN_BSR_SRCLR);
 FourSegDisplay fourSegDisplay(ledBsr, PIN_FSD_DIGIT1, PIN_FSD_DIGIT2, PIN_FSD_DIGIT3, PIN_FSD_DIGIT4);
 
-RingBuffer<uint16_t, 10> sensorDataBuffer(0);
+RingBuffer<uint16_t, RINGBUFFER_SIZE> sensorDataBuffer(0);
 
 void triggerUltrasound() {
   digitalWrite(PIN_USS_TRG, HIGH);

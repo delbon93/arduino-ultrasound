@@ -91,14 +91,14 @@ class ShiftRegister8
     Shift();
   }
 
-  private:
-
   void Store() const
   {
     digitalWrite(m_PinStorageRegisterClock, HIGH);
     Wait();
     digitalWrite(m_PinStorageRegisterClock, LOW);
   }
+
+  private:
 
   void Shift() const
   {
