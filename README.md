@@ -37,7 +37,7 @@ Another interesting problem was the fact that the 5461AS seven-segment display -
 ## Resources
 
 - [Arduino IDE](https://www.arduino.cc/en/software)
-- [Using the KYX-5461AS 4-digit 7-segment LED display with Arduino by Thomas Bibby](https://thomas.bibby.ie/using-the-kyx-5461as-4-digit-7-segment-led-display-with-arduino/) by Thomas Bibby
+- [Using the KYX-5461AS 4-digit 7-segment LED display with Arduino](https://thomas.bibby.ie/using-the-kyx-5461as-4-digit-7-segment-led-display-with-arduino/) by Thomas Bibby
 - [74HC595 datasheet](https://www.ti.com/lit/ds/symlink/sn74hc595.pdf?ts=1721926001283&ref_url=https%253A%252F%252Feu.mouser.com%252F) by Texas Instruments
 - [This document describing the HC-SR04 operation](https://www.mikrocontroller.net/attachment/218122/HC-SR04_ultraschallmodul_beschreibung_3.pdf) by KT-Elektronic (in German)
 - [TinkerCAD](https://www.tinkercad.com) by Autodesk for the schematics
